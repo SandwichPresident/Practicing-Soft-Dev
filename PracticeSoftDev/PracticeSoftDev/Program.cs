@@ -65,7 +65,7 @@
             Console.WriteLine();
             Console.WriteLine("No results found with search: " + query);
             Console.WriteLine();
-            Console.WriteLine(query + " is added to search history.");
+            Console.WriteLine(query + " is added to your search history.");
             Console.WriteLine();
 
             hist.Push(query);
@@ -74,7 +74,7 @@
 
         public void view(Stack<string> hist)
         {
-
+            
         }
 
         public void delete(Stack<string> hist)
