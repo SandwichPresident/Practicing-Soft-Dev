@@ -5,9 +5,25 @@
         static void Main(string[] args)
         {
             Stack<string> searchHistory = new Stack<string>();
+            bool iterate = false;
 
             Console.WriteLine("Welcome to the Browser (with advanced search history)!");
-            logic(searchHistory);
+            while (iterate == false)
+            {
+                string nyVal;
+                logic(searchHistory);
+                Console.WriteLine("Do you want to do more?");
+                Console.Write("Input either y or n");
+                nyVal = Console.ReadLine();
+                if (nyVal == "y")
+                {
+                    logic(searchHistory);
+                }
+                else if (nyVal == "n")
+                {
+                    return;
+                }
+            }
         }
 
         static public void logic(Stack<string> searchHist)
@@ -23,12 +39,12 @@
             }
             else if (stringVal == "v")
             {
-                view();
+                //view(searchHist);
                 return;
             }
             else if (stringVal == "d")
             {
-                delete();
+                //delete(searchHist);
                 return;
             }
             else
@@ -54,12 +70,12 @@
             return;
         }
 
-        public void view()
+        public void view(Stack<string> hist)
         {
 
         }
 
-        public void delete()
+        public void delete(Stack<string> hist)
         {
 
         }
