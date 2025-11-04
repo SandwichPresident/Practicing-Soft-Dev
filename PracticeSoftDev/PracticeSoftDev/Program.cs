@@ -6,8 +6,32 @@
 
         static void Main(string[] args)
         {
-
             
+        }
+
+        public void logic()
+        {
+            string stringVal;
+            Console.WriteLine("What would you like to do: Search, View, or Delete?");
+            Console.Write("Input either s, v, or d");
+            stringVal = Console.ReadLine();
+            if (stringVal == "s")
+            {
+
+            }
+            else if (stringVal == "v")
+            {
+
+            }
+            else if (stringVal == "d")
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("Not an appropriate value");
+                return;
+            }
         }
 
         public void search()
