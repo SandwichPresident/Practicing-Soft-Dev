@@ -2,14 +2,15 @@
 {
     internal class Program
     {
-        Stack<string> searchHistory = new Stack<string>();
-
         static void Main(string[] args)
         {
-            
+            Stack<string> searchHistory = new Stack<string>();
+
+            Console.WriteLine("Welcome to the Browser (with advanced search history)!");
+            logic(searchHistory);
         }
 
-        public void logic()
+        static public void logic(Stack<string> searchHist)
         {
             string stringVal;
             Console.WriteLine("What would you like to do: Search, View, or Delete?");
@@ -17,7 +18,7 @@
             stringVal = Console.ReadLine();
             if (stringVal == "s")
             {
-                search();
+                search(searchHist);
                 return;
             }
             else if (stringVal == "v")
@@ -37,7 +38,7 @@
             }
         }
 
-        public void search()
+        static public void search(Stack<string> hist)
         {
             string query;
             Console.WriteLine("What do you want to search: ");
@@ -49,7 +50,8 @@
             Console.WriteLine();
             Console.WriteLine(query + " is added to search history.");
 
-            searchHistory.Push(query);
+            hist.Push(query);
+            return;
         }
 
         public void view()
