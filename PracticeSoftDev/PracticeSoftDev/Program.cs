@@ -8,12 +8,13 @@
             bool iterate = false;
 
             Console.WriteLine("Welcome to the Browser (with advanced search history)!");
+            Console.WriteLine();
             while (iterate == false)
             {
                 string nyVal;
                 logic(searchHistory);
                 Console.WriteLine("Do you want to do more?");
-                Console.Write("Input either y or n");
+                Console.Write("Input either y or n: ");
                 nyVal = Console.ReadLine();
                 if (nyVal == "y")
                 {
@@ -30,7 +31,7 @@
         {
             string stringVal;
             Console.WriteLine("What would you like to do: Search, View, or Delete?");
-            Console.Write("Input either s, v, or d");
+            Console.Write("Input either s, v, or d: ");
             stringVal = Console.ReadLine();
             if (stringVal == "s")
             {
@@ -65,6 +66,7 @@
             Console.WriteLine("No results found with search: " + query);
             Console.WriteLine();
             Console.WriteLine(query + " is added to search history.");
+            Console.WriteLine();
 
             hist.Push(query);
             return;
