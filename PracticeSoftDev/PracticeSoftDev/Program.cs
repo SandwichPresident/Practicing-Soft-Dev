@@ -26,6 +26,14 @@
             return;
         }
 
+        public void view()
+        {
 
+        }
+
+        public void delete()
+        {
+
+        }
     }
 }
