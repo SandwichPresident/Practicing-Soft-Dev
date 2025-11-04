@@ -17,15 +17,18 @@
             stringVal = Console.ReadLine();
             if (stringVal == "s")
             {
-
+                search();
+                return;
             }
             else if (stringVal == "v")
             {
-
+                view();
+                return;
             }
             else if (stringVal == "d")
             {
-
+                delete();
+                return;
             }
             else
             {
@@ -47,7 +50,6 @@
             Console.WriteLine(query + " is added to search history.");
 
             searchHistory.Push(query);
-            return;
         }
 
         public void view()
