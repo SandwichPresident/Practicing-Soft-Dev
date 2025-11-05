@@ -40,7 +40,7 @@
             }
             else if (stringVal == "v")
             {
-                //view(searchHist);
+                view(searchHist);
                 return;
             }
             else if (stringVal == "d")
@@ -72,9 +72,35 @@
             return;
         }
 
-        public void view(Stack<string> hist)
+        public static void view(Stack<string> hist)
         {
-            
+            int range;
+            Console.WriteLine($"How many entries of your search history do you wish to see? LIMIT: {hist.Count}");
+            //casts read line into an int
+            range = int.Parse(Console.ReadLine());
+            if (range < 0 || range > hist.Count())
+            {
+                Console.WriteLine("Out of bounds, please try again: ");
+                view(hist);
+                return;
+            }
+            //tries to peek first to limit complexity/demand
+            else if(range == 1)
+            {
+
+                Console.WriteLine(hist.Peek());
+                return;
+            }
+            else
+            {
+                //creates a copy of hist to be used in a desctructive reading
+                Stack<String> histCopy = new Stack<String>(hist.Reverse());
+                for (int i = 0; i < range; i++) { 
+                    Console.WriteLine(histCopy.Pop());
+                }
+                return;
+            }
+
         }
 
         public void delete(Stack<string> hist)
