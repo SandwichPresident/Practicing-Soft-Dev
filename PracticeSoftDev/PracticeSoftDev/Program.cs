@@ -105,7 +105,16 @@
 
         public void delete(Stack<string> hist)
         {
-
-        }
+            if(hist.length > 0)
+            {
+                hist.Pop();
+                Console.WriteLine("Most recent search deleted.");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("No searches to delete.");
+                return;
+            }
     }
 }
