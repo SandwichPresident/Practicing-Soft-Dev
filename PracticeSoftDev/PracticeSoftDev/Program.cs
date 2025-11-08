@@ -105,7 +105,7 @@
 
         static public void delete(Stack<string> hist)
         {
-            if (hist.length > 0)
+            if (hist.Count > 0)
             {
                 hist.Pop();
                 Console.WriteLine("Most recent search deleted.");
