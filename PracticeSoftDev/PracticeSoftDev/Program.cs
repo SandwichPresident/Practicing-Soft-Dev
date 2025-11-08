@@ -6,13 +6,17 @@
         {
             Stack<string> searchHistory = new Stack<string>();
             bool iterate = false;
+            int ret = 0;
 
             Console.WriteLine("Welcome to the Browser (with advanced search history)!");
             Console.WriteLine();
             while (iterate == false)
             {
                 string nyVal;
-                logic(searchHistory);
+                if (ret == 0)
+                {
+                    logic(searchHistory);
+                }
                 Console.WriteLine("Do you want to do more?");
                 Console.Write("Input either y or n: ");
                 nyVal = Console.ReadLine();
@@ -20,6 +24,7 @@
                 if (nyVal == "y")
                 {
                     logic(searchHistory);
+                    ret++;
                 }
                 else if (nyVal == "n")
                 {
