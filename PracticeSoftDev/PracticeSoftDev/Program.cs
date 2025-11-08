@@ -16,6 +16,7 @@
                 Console.WriteLine("Do you want to do more?");
                 Console.Write("Input either y or n: ");
                 nyVal = Console.ReadLine();
+                Console.WriteLine();
                 if (nyVal == "y")
                 {
                     logic(searchHistory);
@@ -58,7 +59,7 @@
         static public void search(Stack<string> hist)
         {
             string query;
-            Console.WriteLine("What do you want to search: ");
+            Console.Write("What do you want to search: ");
             query = Console.ReadLine();
             Console.WriteLine();
             Console.WriteLine("You searched: " + query + "...");
@@ -75,9 +76,10 @@
         static public void view(Stack<string> hist)
         {
             int range;
-            Console.WriteLine($"How many entries of your search history do you wish to see? LIMIT: {hist.Count}");
+            Console.Write($"How many entries of your search history do you wish to see? LIMIT: {hist.Count} - ");
             //casts read line into an int
             range = int.Parse(Console.ReadLine());
+            Console.WriteLine();
             if (range < 0 || range > hist.Count())
             {
                 Console.WriteLine("Out of bounds, please try again: ");
@@ -87,8 +89,8 @@
             //tries to peek first to limit complexity/demand
             else if (range == 1)
             {
-
                 Console.WriteLine(hist.Peek());
+                Console.WriteLine();
                 return;
             }
             else
@@ -97,6 +99,7 @@
                 Stack<String> histCopy = new Stack<String>(hist.Reverse());
                 for (int i = 0; i < range; i++) { 
                     Console.WriteLine(histCopy.Pop());
+                    Console.WriteLine();
                 }
                 return;
             }
@@ -108,12 +111,16 @@
             if (hist.Count > 0)
             {
                 hist.Pop();
+                Console.WriteLine();
                 Console.WriteLine("Most recent search deleted.");
+                Console.WriteLine();
                 return;
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("No searches to delete.");
+                Console.WriteLine();
                 return;
             }
         }
