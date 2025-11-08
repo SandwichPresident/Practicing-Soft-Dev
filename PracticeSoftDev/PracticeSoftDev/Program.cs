@@ -45,7 +45,7 @@
             }
             else if (stringVal == "d")
             {
-                //delete(searchHist);
+                delete(searchHist);
                 return;
             }
             else
@@ -72,7 +72,7 @@
             return;
         }
 
-        public static void view(Stack<string> hist)
+        static public void view(Stack<string> hist)
         {
             int range;
             Console.WriteLine($"How many entries of your search history do you wish to see? LIMIT: {hist.Count}");
@@ -103,7 +103,7 @@
 
         }
 
-        public void delete(Stack<string> hist)
+        static public void delete(Stack<string> hist)
         {
             if(hist.length > 0)
             {
