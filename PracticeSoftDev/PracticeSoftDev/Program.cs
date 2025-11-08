@@ -85,7 +85,7 @@
                 return;
             }
             //tries to peek first to limit complexity/demand
-            else if(range == 1)
+            else if (range == 1)
             {
 
                 Console.WriteLine(hist.Peek());
@@ -105,7 +105,7 @@
 
         static public void delete(Stack<string> hist)
         {
-            if(hist.length > 0)
+            if (hist.length > 0)
             {
                 hist.Pop();
                 Console.WriteLine("Most recent search deleted.");
@@ -116,5 +116,6 @@
                 Console.WriteLine("No searches to delete.");
                 return;
             }
+        }
     }
 }
