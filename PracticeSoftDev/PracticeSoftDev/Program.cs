@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Practicing Software Development Homework
+ * Due: 11/9/2025
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
